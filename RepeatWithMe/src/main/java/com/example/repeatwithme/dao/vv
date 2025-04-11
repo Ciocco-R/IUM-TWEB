@@ -1,0 +1,41 @@
+select teacher.name , teacher.surname , course.title , lp.day  ,lp.hour
+    from (  select tutte.idteacher , tutte.idcourse , tutte.day, tutte.hour
+            from (
+                select teaching.idteacher , teaching.idcourse , calendar.day, calendar.hour
+                from teaching join calendar ) tutte
+                where not exists (  select teacher.name , teacher.surname , course.title , lp.day  ,lp.hour
+                                    from (  select tutte.idselect teacher.name , teacher.surname , course.title , lp.day  ,lp.hour
+                                            from (  select tutte.idteacher , tutte.idcourse , tutte.day, tutte.hour
+                                                    from ( select teaching.idteacher , teaching.idcourse , calendar.day, calendar.hour
+                            from teaching join calendar ) tutte
+                            where not exists (select teacher.name , teacher.surname , course.title , lp.day  ,lp.hour
+                            from
+                                (select tutte.idteacher , tutte.idcourse , tutte.day, tutte.hour
+                                     from (
+                                            select teaching.idteacher , teaching.idcourse , calendar.day, calendar.hour
+                                            from teaching join calendar ) tutte
+                                     where not exists (
+                                                select booking.idteacher , booking.idcourse , booking.dayCalendar, booking.hourCalendar
+                                                from booking
+                                                where booking.idteacher like tutte.idteacher and booking.idcourse like tutte.idcourse and booking.daycalendar like tutte.day and booking.hourcalendar like tutte.hour and  booking.state not like 'deleted'
+                                            )
+                                    )lp join teacher on (lp.idteacher like teacher.idteacher) join course on (lp.idcourse like course.idcourse)
+                                select booking.idteacher , booking.idcourse , booking.dayCalendar, booking.hourCalendar
+                            from booking
+                            where booking.idteacher like tutte.idteacher and booking.idcourse like tutte.idcourse and booking.daycalendar like tutte.day and booking.hourcalendar like tutte.hour and  booking.state not like 'deleted'
+                            )
+                            )lp join teacher on (lp.idteacher like teacher.idteacher) join course on (lp.idcourse like course.idcourse)teacher , tutte.idcourse , tutte.day, tutte.hour
+             from (
+                    select teaching.idteacher , teaching.idcourse , calendar.day, calendar.hour
+                    from teaching join calendar ) tutte
+             where not exists (
+                        select booking.idteacher , booking.idcourse , booking.dayCalendar, booking.hourCalendar
+                        from booking
+                        where booking.idteacher like tutte.idteacher and booking.idcourse like tutte.idcourse and booking.daycalendar like tutte.day and booking.hourcalendar like tutte.hour and  booking.state not like 'deleted'
+                    )
+            )lp join teacher on (lp.idteacher like teacher.idteacher) join course on (lp.idcourse like course.idcourse)
+        select booking.idteacher , booking.idcourse , booking.dayCalendar, booking.hourCalendar
+    from booking
+    where booking.idteacher like tutte.idteacher and booking.idcourse like tutte.idcourse and booking.daycalendar like tutte.day and booking.hourcalendar like tutte.hour and  booking.state not like 'deleted'
+    )
+    )lp join teacher on (lp.idteacher like teacher.idteacher) join course on (lp.idcourse like course.idcourse)

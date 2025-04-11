@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/Home.css">
+    <link rel="stylesheet" href="CSS/allOperations.css">
+    <link rel="stylesheet" href="CSS/AvailableRepetitions.css">
+    <link rel="stylesheet" href="CSS/TeachersManagement.css">
+    <link rel="stylesheet" href="CSS/InsertBooking.css">
+    <link rel="stylesheet" href="CSS/Signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <title>RepeatWithMe</title>
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <div id="components-demo">
+        <section class="header">
+            <div class="hnav">
+                <nav class="nav1">
+                    <img id="img" src="./assets/logo%20rwm.png">
+                    <div class="nav_links" >
+                        <ul>
+                            <li v-on:click="transit('home')"><a>HOME</a></li>
+                            <li v-on:click="transit('availableRepetitions')"     v-if="!this.stateAppLog"    ><a>RIPETIZIONI DISPONIBILI</a></li>
+                            <li v-on:click="transit('allOperations')"  v-if="this.stateAppLog"     ><a>LE MIE OPERAZIONI</a></li>
+                            <li v-on:click="transit('login')"   v-if="!this.stateAppLog"    ><a>LOGIN</a></li>
+                            <li v-on:click="transit('signin')"  v-if="!this.stateAppLog"    ><a>REGISTRATI</a></li>
+                            <li v-on:click="transit('logout')"  v-if="this.stateAppLog"     ><a>LOGOUT</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <home v-if="mainApp === 'home'" ></home>
+            <login  v-if="mainApp === 'login' "     v-on:login-set-app-log="setStateAppLog"   v-on:transit-inner="transit" ></login>
+            <signin v-if="mainApp === 'signin'"     v-on:transit-inner="transit" ></signin>
+            <logout v-if="mainApp === 'logout'"     v-on:logout-set-app-log="setStateAppLog"    v-on:transit-inner="transit" ></logout>
+            <available-repetitions v-if="mainApp === 'availableRepetitions'" v-on:transit-inner="transit"></available-repetitions>
+            <all-operations v-if="mainApp === 'allOperations'"></all-operations>
+        </section>
+
+        <section v-if="mainApp === 'home'"  class="course">
+            <homev2></homev2>
+        </section>
+
+        <section v-if="mainApp === 'home'"  class="campus">
+            <homev3></homev3>
+        </section>
+
+        <section v-if="mainApp === 'home'"  class="footer">
+            <footercomp></footercomp>
+        </section>
+    </div>
+
+<!---------------------------SCRIPT------------------------------->
+
+<!---------------------------file che contengono i components------------------------------->
+<script src="./components/Home.js"></script>
+<script src="./components/HomeV2.js"></script>
+<script src="./components/HomeV3.js"></script>
+<script src="./components/FooterComp.js"></script>
+<script src="./components/Login.js"></script>
+<script src="./components/Logout.js"></script>
+<script src="./components/Signin.js"></script>
+<script src="./components/AvailableRepetitions.js"></script>
+<script src="./components/AllOperations.js"></script>
+<script src="./components/appComponents/MyOwnBooking.js"></script>
+<script src="./components/appComponents/InsertBooking.js"></script>
+<script src="./components/appComponents/BookingState.js"></script>
+<script src="./components/appComponents/AllBookings.js"></script>
+<script src="./components/appComponents/AdminManagements/TeachersManagement.js"></script>
+<script src="./components/appComponents/AdminManagements/TeachingsManagement.js"></script>
+<script src="./components/appComponents/AdminManagements/CoursesManagement.js"></script>
+
+<script>
+    /* creo i component ('nome ', il nome del file del component vhe hai messo dopo Const )*/
+    Vue.component('home',                   HomeComponent);
+    Vue.component('homev2',                 HomeV2Component);
+    Vue.component('homev3',                 HomeV3Component);
+    Vue.component('footercomp',             FooterComponent);
+    Vue.component('login',                  LoginComponent);
+    Vue.component('signin',                 SigninComponent);
+    Vue.component('logout',                 LogoutComponent);
+    Vue.component('availableRepetitions',   AvailableRepetitionsComponent);
+    Vue.component('allOperations',          AllOperationsComponent);
+    Vue.component('my-own-booking',         MyOwnBookingComponent);
+    Vue.component('insert-booking',         InsertBookingComponent);
+    Vue.component('booking-state',          BookingStateComponent);
+    Vue.component('all-bookings',           AllBookingsComponent);
+    Vue.component('teachers-management',    TeachersManagementComponent);
+    Vue.component('courses-management',     CoursesManagementComponent);
+    Vue.component('teachings-management',   TeachingsManagementComponent);
+    
+    new Vue({
+        el: '#components-demo',
+        data:{
+            stateAppLog:false,
+            mainApp: 'home',
+            loginPage: false
+        },
+        methods:{
+            setStateAppLog:function () {
+                console.log("ENTRO");
+                this.stateAppLog = !this.stateAppLog  ;
+            },
+            toogleNavApp(value){
+                this.mainApp=value;
+            },
+            transit:function (value){
+                this.mainApp = value;
+            }
+        }
+
+    });
+    /*new Vue({ el: '#components-demo' })*/
+</script>
+</body>
+</html>

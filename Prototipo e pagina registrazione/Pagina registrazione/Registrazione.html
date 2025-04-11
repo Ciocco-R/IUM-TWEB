@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina di registrazione RepeatWithMe</title>
+    <link rel="stylesheet" href="Reg.css">
+</head>
+<body>
+    <div id="registrationDiv">
+        <form class="signup" method="post" action="done.html">
+            <img id="img" src="logo%20rwm.png" aria-label="link alla home page" alt="Site Logo">
+            <br>
+            <p>I campi obbligatori sono contraddistinti dall'asterisco <span>(*)</span></p>
+            <br>
+
+            <label for="name"><span>*</span>Nome:</label>
+            <input type="text" id="name" name="name" autocomplete="given-name" aria-required="true" required>
+
+            <label for="surname"><span>*</span>Cognome:</label>
+            <input type="text" id="surname" name="surname" autocomplete="family-name" aria-required="true" required>
+
+            <label for="email"><span>*</span>Email:</label>
+            <input type="email" id="email" name="email" autocomplete="email" aria-required="true" required>
+
+            <label for="username"><span>*</span>Username:</label>
+            <input type="text" id="username" name="username" autocomplete="username" aria-required="true" required>
+
+            <label for="password"><span>*</span>Password:</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" aria-required="true" required>
+
+            <label for="password-confirm"><span>*</span>Conferma password:</label>
+            <input type="password" id="password-confirm" name="password-confirm" aria-required="true" required>
+
+            <label for="date"><span>*</span>Data di nascita:</label>
+            <input type="date" id="date" name="date" autocomplete="bday" aria-required="true" required>
+
+            <label for="sex"><span>*</span>Sesso:</label>
+            <select name="sex" id="sex" autocomplete="sex" aria-required="true">
+                <option>Maschio</option>
+                <option>Femmina</option>
+                <option>Altro</option>
+                <option>Preferisco non rispondere</option>
+            </select>
+
+            <label for="indirizzo"><span>*</span>Indirizzo di nascita:</label>
+            <input type="text" id="indirizzo" name="indirizzo" aria-required="true" required>
+
+            <label for="school">Scuola frequentata:</label>
+            <select name="school" id="school" aria-required="false">
+                <option>Liceo</option>
+                <option>Istituto Tecnico</option>
+                <option>Istituto Professionale</option>
+                <option>Scuola Media</option>
+                <option>Università</option>
+                <option>Non frequento nessun tipo di scuola</option>
+                <option>Preferisco non rispondere</option>
+            </select>
+
+            <label for="telefono">Numero di telefono:</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" aria-required="false">
+
+            <label for="residenza">Indirizzo di residenza:</label>
+            <input type="text" id="residenza" name="residenza" autocomplete="address-line1" aria-required="false">
+
+            <label for="citta">Città di residenza:</label>
+            <input type="text" id="citta" name="citta" autocomplete="address-level1" aria-required="false">
+
+            <input type="submit" value="Registrati" aria-label="Registrati">
+        </form>
+    </div>
+</body>
+</html>

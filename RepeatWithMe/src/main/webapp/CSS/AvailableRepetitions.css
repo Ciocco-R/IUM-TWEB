@@ -1,0 +1,135 @@
+
+/*=========== available repetitions ===========*/
+
+#availableRepetitions h1{
+    margin-top: 10px;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+.arDiv{
+    align-self: center;
+    width: fit-content;
+}
+
+
+/*=========== MOB ===========*/
+
+.MOB h1{
+    margin-top: 10px;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+#MOBdiv{
+    overflow: auto;
+    align-self: center;
+    width: fit-content;
+    height: 490px;
+}
+
+
+/*=========== All Booking  ===========*/
+
+.allbookingsdiv h1{
+    margin-top: 10px;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+#ABScroll{
+    overflow: auto;
+    align-self: center;
+    width: fit-content;
+    height: 490px;
+}
+
+/*=========== All Booking  ===========*/
+
+.bookingstatediv h1{
+    margin-top: 10px;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+#ABScroll{
+    overflow: auto;
+    align-self: center;
+    width: fit-content;
+    height: 490px;
+}
+
+
+/*============= Table fill =================*/
+thead{
+    /*box-shadow: 0 3px 6px black;*/
+    background-color: #04091eb3;
+    color: white;
+}
+
+/*
+tbody {
+    height: 400px;
+    overflow-y: auto;
+}*/
+
+::-webkit-scrollbar{
+    width: 8px;
+    height: 6px;
+}
+::-webkit-scrollbar-track{
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #ddd;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #ccc;
+}
+
+/*** Table Styles **/
+
+.table-fill {
+    font-size: 16px;
+    border: 2px solid white;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+    overflow-y:scroll;
+    max-height:400px;
+    height: auto;
+    display:block;
+}
+
+.table-fill th, td {
+    border: 2px solid white;
+    padding: 20px 20px;
+    text-align: left;
+}
+
+.table-fill img{
+    width: 3vh;
+}
+
+.table-hover img{
+    width: 3vh;
+}
+
+tr:nth-child(even){
+    background-color: #e0e0e0;
+}
+
+.table-fill .cambiamenti_stato{
+    background-color: #04091eb3;
+    color: white;
+}
+
+.table-fill .cambiamenti_stato:hover{
+    background-color: rgba(15, 33, 108, 0.63);
+    color: white;
+    cursor: pointer;
+}

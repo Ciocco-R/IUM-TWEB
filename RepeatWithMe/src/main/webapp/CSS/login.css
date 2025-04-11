@@ -1,0 +1,99 @@
+/*------------Login--------------*/
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+.login-box h1{
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 0 20px 0;
+    color: #04091eb3;
+    border-bottom: 1px solid silver;
+}
+
+.login-box form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #04091eb3;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content:'';
+    position:absolute;
+    top:40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #04091eb3;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #04091eb3;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+#loginButton{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #04091eb3;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    margin: 30px 0;
+}
+
+#loginButton :hover{
+    border-color: #04091eb3;
+    transition: 5s;
+}
+
+.signup_link{
+    color: #04091eb3;
+    cursor: pointer;
+}
+
+.signup_link:hover{
+    text-decoration: underline;
+}

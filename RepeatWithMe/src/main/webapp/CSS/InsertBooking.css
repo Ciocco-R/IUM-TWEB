@@ -1,0 +1,103 @@
+/*
+
+
+    v-if="selectedBookings.length > 0"
+
+*/
+.insertbooking h1{
+    margin-top: 10px;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+#InsertBookingOpDiv{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    height: auto;
+    width: fit-content;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.301);
+    margin-left: 31%;
+}
+.input-slect{
+    height: 40px;
+    width: 250px;
+    margin: 10px; 
+}
+.input-slect select{
+    height: 40px;
+    width: 250px;
+    font-weight: 400;
+    font-size: 15px;
+    border: 0;
+    border-bottom: solid silver 2px ;
+    background-color: white;
+}
+.input-slect select option{
+    border: 0;
+    padding-top: 8px;
+    font-weight: 300;
+    color: rgb(49, 49, 49);
+    width: 250px;
+}
+.flex-insertBooking{
+    overflow: auto;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.t-scroll{
+    margin-left: 50px;
+    overflow: auto;
+    align-self: center;
+    width: fit-content;
+    max-height: 400px;
+}
+.t-scroll{
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+}
+.t-scroll th {
+    color:#D5DDE5;
+    background:#1b1e24;
+    border-bottom: solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size:17px;
+    font-weight: 100;
+    padding:18px;
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+}
+.t-scroll tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom-: 1px solid #C1C3D1;
+    color:#666B85;
+    font-weight:normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+.t-scroll td {
+    background:#FFFFFF;
+    padding:18px;
+    text-align:left;
+    vertical-align:middle;
+    font-weight:300;
+    font-size:15px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+}
+.t-scroll tr:hover td {
+    background:#4E5066;
+    color:#FFFFFF;
+    border-top: 1px solid #22262e;
+}
